@@ -2,9 +2,12 @@
 var loopInterval = 100; //loop speed
 var cLeft = 0; //character left
 var cTop = 0; //character top
-var cMove = 16; //number of pixels the character moves per move
+var cMove = 1; //number of pixels the character moves per move
 var cStartL = cMove * 3;
 var cStartT = cMove * 3;
+//Player Variables
+var level = 0;
+var xp = 0;
 
 //FUNCTIONS
 
@@ -18,10 +21,10 @@ function loop() {//game loop
     setInterval(function(){
 
     	detectBlock();
+
+
     	clearMap();
     	drawMap();
-
-    
         console.log("loop");
     }, loopInterval); //loop speed
 }
@@ -43,38 +46,35 @@ function clearMap() {//clear the map
 }
 
 function move(e) { //character movement
-    var character = document.getElementById("character"); //get the character
-    
     if (e.keyCode == 39) { 
         cLeft += cMove; 
-        character.style.left = cLeft + "px"; 
+        mapArray[cTop][cLeft - 1] = mapOriginal[cTop][cLeft - 1];
+        mapArray[cTop][cLeft] = 0;
     } 
     else if (e.keyCode == 37) {
         cLeft -= cMove; 
-        character.style.left = cLeft + "px"; 
+        mapArray[cTop][cLeft + 1] = mapOriginal[cTop][cLeft + 1];
+        mapArray[cTop][cLeft] = 0;
     }
     else if (e.keyCode == 40) {
         cTop += cMove; 
-        character.style.top = cTop + "px"; 
+        mapArray[cTop - 1][cLeft] = mapOriginal[cTop - 1][cLeft];
+        mapArray[cTop][cLeft] = 0;
     }
     else if (e.keyCode == 38) {
         cTop -= cMove; 
-        character.style.top = cTop + "px"; 
+        mapArray[cTop + 1][cLeft] = mapOriginal[cTop + 1][cLeft];
+        mapArray[cTop][cLeft] = 0;
     }
 } document.onkeydown = move;
 
 function detectBlock() {//detect when the user is standing at certain coordinates
-	var character = document.getElementById("character"); //get the character
-
-	if(character.style.top == "48px" && character.style.left == "96px") {
+	if(mapArray[3][6] == 0) {
 		//alert("Thy est atop thee portl!");
-		mapArray[5][6] = 10;
-		mapArray[3][6] = 1;
-	}
-	if(character.style.top == "80px" && character.style.left == "96px") {
-		//alert("Thy est atop thee portl!");
-		mapArray[5][6] = 1;
-		mapArray[3][6] = 10;
+		mapArray[3][6] = 0; //the block you step on
+		mapOriginal[3][6] = 1;
+		mapArray[5][6] = 10; //the block that changes
+		mapOriginal[5][6] = 10;
 	}
 	setTimeout(function(){}, loopInterval)
 }
