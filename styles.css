@@ -1,0 +1,109 @@
+body{
+	background-color: #ffffff;
+	color: #000000;
+    image-rendering: pixelated;
+    margin: 0;
+    padding: 0;
+}
+
+#character{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 16px;
+    width: 16px;
+    background-color: #f34f45;
+}
+#mapContainer{
+	position: absolute;
+	height: 256px;
+	width: 256px;
+	top: 0%;
+	left: 0%;
+	border: solid;
+	border-width: 0px;
+	border-color: #fff;
+}
+
+
+
+
+
+/* TILES */
+.character{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background-color: #f34f45;
+}
+.dirt{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/dirt.png);
+}
+.grass{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/grass.png);
+}
+.stone{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/stone.png);
+}
+.sand{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/sand.png);
+}
+.water{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/water.png);
+}
+.planks{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/planks.png);
+}
+.leaves{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/leaves.png);
+}
+.lava{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/lava.png);
+}
+.gravel{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/gravel.png);
+}
+.coal{
+	position: relative;
+	height: 16px;
+	width: 16px;
+	float: left;
+	background: url(data/images/coal.png);
+}
