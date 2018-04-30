@@ -98,21 +98,21 @@ function collisionDetect() {
 	if (lastDirection == "down" && mapOriginal[cTop][cLeft] == 5){
 		mapArray[cTop --][cLeft] = 5;
 		mapArray[cTop][cLeft] = 0;
-		//console.log("water down");
+		console.log("collision down");
 	}
 	else if (lastDirection == "up" && mapOriginal[cTop][cLeft] == 5){
 		mapArray[cTop ++][cLeft] = 5;
 		mapArray[cTop][cLeft] = 0;
-		//console.log("water up");
+		console.log("collision up");
 	}
 	else if (lastDirection == "left" && mapOriginal[cTop][cLeft] == 5){
 		mapArray[cTop][cLeft ++] = 5;
 		mapArray[cTop][cLeft] = 0;
-		//console.log("water left");
+		console.log("collision left");
 	}
 	else if (lastDirection == "right" && mapOriginal[cTop][cLeft] == 5){
 		mapArray[cTop][cLeft --] = 5;
 		mapArray[cTop][cLeft] = 0;
-		//console.log("water right");
+		console.log("collision right");
 	}
 }
