@@ -49,3 +49,17 @@ var tiles = [
 	['<div class="gravel"></div>'],
 	['<div class="coal"></div>'],
 ];
+
+var collidable = [
+	{collisionDetect: 0},
+	{collisionDetect: 0},
+	{collisionDetect: 0},
+	{collisionDetect: 0},
+	{collisionDetect: 1},
+	{collisionDetect: 1},
+	{collisionDetect: 1},
+	{collisionDetect: 0},
+	{collisionDetect: 0},
+	{collisionDetect: 0},
+	{collisionDetect: 0},
+];
