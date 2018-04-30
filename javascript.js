@@ -7,7 +7,7 @@ var cStartL = cMove * 3;
 var cStartT = cMove * 3;
 var punchyBlock = 2;
 //Player Variables
-var lastDirection;
+var lastDirection; //most recent direction the character moved in
 var level = 0;
 var xp = 0;
 
@@ -95,24 +95,24 @@ function detectBlock() {//detect when the user is standing at certain coordinate
 }
 
 function collisionDetect() {
-	if (lastDirection == "down" && mapOriginal[cTop][cLeft] == 5){
+	if (lastDirection == "down" && collidable[mapOriginal[cTop][cLeft]].collisionDetect == 1){
 		mapArray[cTop --][cLeft] = 5;
 		mapArray[cTop][cLeft] = 0;
-		console.log("collision down");
+		//console.log("collision down");
 	}
-	else if (lastDirection == "up" && mapOriginal[cTop][cLeft] == 5){
+	else if (lastDirection == "up" && collidable[mapOriginal[cTop][cLeft]].collisionDetect == 1){
 		mapArray[cTop ++][cLeft] = 5;
 		mapArray[cTop][cLeft] = 0;
-		console.log("collision up");
+		//console.log("collision up");
 	}
-	else if (lastDirection == "left" && mapOriginal[cTop][cLeft] == 5){
+	else if (lastDirection == "left" && collidable[mapOriginal[cTop][cLeft]].collisionDetect == 1){
 		mapArray[cTop][cLeft ++] = 5;
 		mapArray[cTop][cLeft] = 0;
-		console.log("collision left");
+		//console.log("collision left");
 	}
-	else if (lastDirection == "right" && mapOriginal[cTop][cLeft] == 5){
+	else if (lastDirection == "right" && collidable[mapOriginal[cTop][cLeft]].collisionDetect == 1){
 		mapArray[cTop][cLeft --] = 5;
 		mapArray[cTop][cLeft] = 0;
-		console.log("collision right");
+		//console.log("collision right");
 	}
 }
