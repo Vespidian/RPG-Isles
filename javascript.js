@@ -1,5 +1,5 @@
 //VARS
-var loopInterval = 50; //loop speed
+var loopInterval = 100; //loop speed
 var cLeft = 0; //character left
 var cTop = 0; //character top
 var cMove = 1; //number of pixels the character moves per move
@@ -74,7 +74,6 @@ function move(e) { //character movement
         mapArray[cTop][cLeft] = 0;
         lastDirection = "up";
     }
-
 
     if(e.keyCode == 32){
     	if(mapArray[cTop][cLeft + 1] == punchyBlock || mapArray[cTop][cLeft - 1] == punchyBlock || mapArray[cTop + 1][cLeft] == punchyBlock || mapArray[cTop - 1][cLeft] == punchyBlock){
